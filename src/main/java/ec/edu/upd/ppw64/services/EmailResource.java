@@ -15,7 +15,7 @@ public class EmailResource {
 
     public EmailResource() {
         // Aquí deberías inicializar EmailService con tu apiKey de Resend
-        this.emailService = new EmailService("re_K61tVwsg_B9kxV83Wg5go418nqJdJRu4V");
+        this.emailService = new EmailService("re_MndnjwKg_33QdJnAbqSYgEdaFwbh5q8SG");
     }
 
     @POST
