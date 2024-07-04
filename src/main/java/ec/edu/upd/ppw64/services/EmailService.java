@@ -12,8 +12,8 @@ public class EmailService {
         this.resend = new Resend(apiKey);
     }
 
-    public SendEmailResponse enviarCorreo() {
-        SendEmailRequest sendEmailRequest = SendEmailRequest.builder()
+    public SendEmailResponse enviarCorreo(SendEmailRequest sendEmailRequest) {
+        sendEmailRequest = SendEmailRequest.builder()
                 .from("onboarding@resend.dev")
                 .to("mateosigua2002@gmail.com")
                 .subject("Ventadas")

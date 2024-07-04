@@ -23,9 +23,9 @@ public class EmailResource {
     @Path("/enviar")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response enviarCorreo() {
+    public Response enviarCorreo(SendEmailRequest sendEmailRequest) {
     	try {
-            SendEmailResponse response = emailService.enviarCorreo();
+            SendEmailResponse response = emailService.enviarCorreo(sendEmailRequest);
             return Response.status(Response.Status.CREATED).entity(response).build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
