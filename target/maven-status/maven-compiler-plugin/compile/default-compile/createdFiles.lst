@@ -1,0 +1,5 @@
+ec\edu\upd\ppw64\services\CORSFilter.class
+ec\edu\upd\ppw64\services\PathBase.class
+ec\edu\upd\ppw64\services\EmailResource.class
+ec\edu\upd\ppw64\services\EmailService.class
+ec\edu\upd\ppw64\services\Email.class
