@@ -18,21 +18,18 @@ public class EmailResource {
         this.emailService = new EmailService("re_K61tVwsg_B9kxV83Wg5go418nqJdJRu4V");
     }
 
-    @GET
+    @POST
     @Path("/enviar")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response enviarCorreo() {
-    	try {
-        SendEmailResponse response = emailService.enviarCorreo();
-        
-        return Response.ok().entity(response).build();
-    	} catch (Exception e) {
-			// TODO: handle exception
-			
-			return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-					.entity(e.getMessage())
-					.build();
-		}
+        try {
+            SendEmailResponse response = emailService.enviarCorreo();
+            return Response.ok().entity(response).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity(e.getMessage())
+                    .build();
+        }
     }
 }
