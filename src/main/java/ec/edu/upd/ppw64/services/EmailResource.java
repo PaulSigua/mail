@@ -1,7 +1,6 @@
 package ec.edu.upd.ppw64.services;
 
 
-import com.resend.services.emails.model.SendEmailRequest;
 import com.resend.services.emails.model.SendEmailResponse;
 
 import jakarta.ws.rs.*;
@@ -23,15 +22,17 @@ public class EmailResource {
     @Path("/enviar")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response enviarCorreo(SendEmailRequest sendEmailRequest) {
+    public Response enviarCorreo() {
     	try {
-            SendEmailResponse response = emailService.enviarCorreo(sendEmailRequest);
-            return Response.status(Response.Status.CREATED).entity(response).build();
-        } catch (Exception e) {
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                    .entity(e.getMessage())
-                    .build();
-        }
-    
+        SendEmailResponse response = emailService.enviarCorreo();
+
+        return Response.ok().entity(response).build();
+    	} catch (Exception e) {
+			// TODO: handle exception
+
+			return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+					.entity(e.getMessage())
+					.build();
+		}
     }
 }
