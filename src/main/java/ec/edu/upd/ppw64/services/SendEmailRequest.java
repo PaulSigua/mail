@@ -1,37 +1,43 @@
 package ec.edu.upd.ppw64.services;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class SendEmailRequest {
+    private String to;
+    private String subject;
+    private String body;
 
-    private String destinatario;
-    private String asunto;
-    private String contenido;
-
-    public SendEmailRequest() {
-        // Constructor por defecto necesario para la deserialización
+    @JsonCreator
+    public SendEmailRequest(@JsonProperty("to") String to,
+                            @JsonProperty("subject") String subject,
+                            @JsonProperty("body") String body) {
+        this.to = to;
+        this.subject = subject;
+        this.body = body;
     }
 
-    // Getters y setters
-    public String getDestinatario() {
-        return destinatario;
+    public String getTo() {
+        return to;
     }
 
-    public void setDestinatario(String destinatario) {
-        this.destinatario = destinatario;
+    public void setTo(String to) {
+        this.to = to;
     }
 
-    public String getAsunto() {
-        return asunto;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setAsunto(String asunto) {
-        this.asunto = asunto;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
-    public String getContenido() {
-        return contenido;
+    public String getBody() {
+        return body;
     }
 
-    public void setContenido(String contenido) {
-        this.contenido = contenido;
+    public void setBody(String body) {
+        this.body = body;
     }
 }
