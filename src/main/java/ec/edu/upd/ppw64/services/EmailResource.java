@@ -22,7 +22,7 @@ public class EmailResource {
     @Path("/enviar")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response enviarCorreo(@QueryParam("destinatario") String destinatario) {
+    public Response enviarCorreo() {
     	try {
         SendEmailResponse response = emailService.enviarCorreo();
         
