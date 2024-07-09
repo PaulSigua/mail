@@ -15,7 +15,7 @@ public class EmailService {
     public SendEmailResponse enviarCorreo() {
         SendEmailRequest sendEmailRequest = SendEmailRequest.builder()
                 .from("onboarding@resend.dev")
-                .to("jeisonpanora12@gmail.com")
+                .to("paulmateo0208@gmail.com")
                 .subject("Ventadas")
                 .html("se guardo el mensaje")
                 .build();
